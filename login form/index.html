@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="stylz.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h2>Register</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+            <div class="input-group">
+                <label for="role">Role</label>
+                <select id="role" name="role" required>
+                    <option value="student">Student</option>
+                    <option value="lecturer">Lecturer</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <button type="submit">Register</button>
+                
+            </div>
+            <div class="social-login">
+                <p>Or register with:</p>
+                <button type="button" class="google">Google</button>
+                <button type="button" class="facebook">Facebook</button>
+            </div>
+    <style>
+        .hidden { display: none; }
+        .container { margin: 20px; }
+        .button { margin: 10px; padding: 10px 20px; cursor: pointer; }
+    </style>
+    <script>
+        function showForm(option) {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('signUpForm').classList.add('hidden');
+            if (option === 'yes') {
+                document.getElementById('loginForm').classList.remove('hidden');
+            } else {
+                document.getElementById('signUpForm').classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p>Do you already have an account?</p>
+        <button class="button" onclick="showForm('yes')">Yes</button>
+        <button class="button" onclick="showForm('no')">No</button>
+    </div>
+
+    <div id="loginForm" class="container hidden">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
+<div id="signUpForm" class="container hidden">
+    <h2>Sign Up</h2>
+    <form>
+        <label for="newUsername">Username:</label>
+        <input type="text" id="newUsername" name="newUsername" required><br><br>
+        <label for="newPassword">Password:</label>
+        <input type="password" id="newPassword" name="newPassword" required><br><br>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+
+        </form>
+    </div>
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+        }
+    </script>
+</body>
+</html>
